@@ -11,6 +11,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/main.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
   <!-- !CSS -->
 
@@ -135,7 +136,13 @@
             </div>
           </div>
         </div>
+        <!-- Mobile nav -->
+        <div class="mobile__navbar" style="display: none;">
+          <i class="mobile__navbar-icon fa-solid fa-bars"></i>
+        </div>
+        <!-- !Mobile nav -->
       </div>
+
     </nav>
   </header>
   <div class="slider">

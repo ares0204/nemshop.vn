@@ -32,21 +32,17 @@ if (isset($_POST['register'])) {
 
     // Nếu kết quả trả về lớn hơn 1 thì nghĩa là username hoặc email đã tồn tại trong CSDL
     if (mysqli_num_rows($result) > 0) {
-        echo '<script language="javascript">alert("Bị trùng tên hoặc chưa nhập tên!"); window.location="authen.php";</script>';
+        echo '<script language="javascript">alert("Bị trùng tên hoặc chưa nhập tên!"); window.location="../pages/authen.php";</script>';
 
         // Dừng chương trình
         die();
     } else {
         $sql = "INSERT INTO member (firstName, lastName, email, password) VALUES ('$firstName','$lastName','$email','$password')";
-        echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="authen.php";</script>';
+        echo '<script language="javascript">alert("Đăng ký thành công!"); window.location="../pages/authen.php";</script>';
 
         if (mysqli_query($conn, $sql)) {
-            echo "Họ: " . $_POST['firstName'] . "<br/>";
-            echo "Tên: " . $_POST['lastName'] . "<br/>";
-            echo "Email đăng nhập: " . $_POST['email'] . "<br/>";
-            echo "Mật khẩu: " . $_POST['password'] . "<br/>";
         } else {
-            echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý"); window.location="authen.php";</script>';
+            echo '<script language="javascript">alert("Có lỗi trong quá trình xử lý"); window.location="../pages/authen.php";</script>';
         }
     }
 }

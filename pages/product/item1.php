@@ -213,9 +213,9 @@
                         <a href="" class="content__info-color-btn"></a>
                         <a href="#" class="content__info-guide">HƯỚNG DẪN CHỌN SIZE</a>
                         <span class="content__info-title">Số lượng</span>
-                        <input type="number" class="content__info-quantity-input" value="1" name="quantity">
                         <!-- Add to cart -->
                         <form action="../../components/addToCart.php?id=1" method="post">
+                            <input type="number" class="content__info-quantity-input" value="1" name="quantity">
                             <input type="submit" value="THÊM VÀO GIỎ" name="addToCart" class="content__info-add-cart">
                             <input type="submit" value="MUA NGAY" class="content__info-buy">
                         </form>

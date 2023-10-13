@@ -1,7 +1,3 @@
-<!-- PHP -->
-  <?php require "../components/loginHandle.php"; ?>
-  <?php require '../components/registerHandle.php'; ?>
-<!-- !PHP -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -215,7 +211,7 @@
                 Nếu bạn đã có tài khoản, hãy đăng nhập để tích lũy điểm thành viên
                 và nhận được những ưu đãi tốt hơn!
               </div>
-              <form class="authen__form" action="./authen.php" method="post">
+              <form class="authen__form" action="../components/loginHandle.php" method="post">
                 <label class="authen__label" for="">Email</label>
                 <input class="authen__input" type="email" placeholder="Email" name="email"/>
                 <label class="authen__label" for="">Mật khẩu</label>
@@ -237,7 +233,7 @@
                 Hãy đăng ký ngay để tích lũy điểm thành viên và nhận được những ưu
                 đãi tốt hơn!
               </div>
-              <form class="authen__form" action="authen.php" method="post">
+              <form class="authen__form" action="../components/registerHandle.php" method="post">
                 <label class="authen__label" for="">Họ</label>
                 <input class="authen__input" type="text" placeholder="Họ" name="firstName"/>
                 <label class="authen__label" for="">Tên</label>
@@ -256,7 +252,7 @@
                   >Tôi đồng ý với các
                   <a class="authen__link" href="/">điều khoản</a> của NEM</label
                 >
-                <input type="submit" name="register" class="authen__btn" value="ĐĂNG KÝ"/>
+                <input type="submit" name="register" class="authen__btn" value="ĐĂNG KÝ"/> 
               </form>
             </div>
           </div>

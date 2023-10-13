@@ -4,6 +4,9 @@
     $connect = mysqli_connect("localhost", "root", "", "data") or die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
     // Kiểm tra xem người dùng đã nhấp vào nút "Thêm vào giỏ hàng" chưa
     if (isset($_POST['addToCart'])) {
+
+        $quantityInput = trim($_POST['quantity']);
+
         // Lấy thông tin sản phẩm từ cơ sở dữ liệu
         $query = "SELECT * FROM product WHERE id = $id";
         $result = mysqli_query($connect, $query);
@@ -12,7 +15,7 @@
         // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
         $query = "SELECT * FROM cart WHERE id = '" . $product['id'] . "'";
         $result = mysqli_query($connect, $query);
-        $existingProduct = mysqli_fetch_assoc($result);
+        $existingProduct = mysqli_fetch_assoc($result); 
 
         if ($existingProduct) {
             // Nếu sản phẩm đã tồn tại trong giỏ hàng, tăng số lượng lên 1
@@ -21,7 +24,7 @@
             mysqli_query($connect, $query);
         } else {
             // Nếu sản phẩm chưa tồn tại trong giỏ hàng, thêm sản phẩm mới vào giỏ hàng
-            $quantity = 1;
+            $quantity = $quantityInput;
             $query = "INSERT INTO cart (id, name, price, img, quantity) VALUES ('" . $product['id'] . "', '" . $product['name'] . "', '" . $product['price'] . "', '" . $product['img'] . "', $quantity)";
             mysqli_query($connect, $query);
         }
