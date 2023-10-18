@@ -1,5 +1,4 @@
 <?php
-// header('Content-Type: text/html; charset=utf-8');
 // Kết nối cơ sở dữ liệu
 $conn = mysqli_connect('localhost', 'root', '', 'data') or die('Lỗi kết nối');
 mysqli_set_charset($conn, "utf8");

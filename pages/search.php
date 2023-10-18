@@ -158,17 +158,13 @@
                     <?php
                     // Kết nối đến cơ sở dữ liệu
                     $conn = mysqli_connect("localhost", "root", "", "data") or die("Kết nối đến cơ sở dữ liệu thất bại: " . mysqli_connect_error());
-
                     // Xử lý tìm kiếm
                     if (isset($_GET['search'])) {
                         $keyword = $_GET['search'];
-
                         // Tạo câu truy vấn SQL
                         $sql = "SELECT * FROM product WHERE name LIKE '%$keyword%'";
-
                         // Thực thi câu truy vấn
                         $result = mysqli_query($conn, $sql);
-
                         // Kiểm tra kết quả truy vấn
                         if (mysqli_num_rows($result) > 0) {
                             // Hiển thị kết quả
